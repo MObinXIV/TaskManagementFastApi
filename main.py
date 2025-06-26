@@ -21,9 +21,9 @@ async def readRoot():
             "GET /health",
             "POST /tasks",
             "GET /tasks",
-            "GET /tasks/{task_id}",
-            "patch /tasks/{task_id}",
-            "DELETE /tasks/{task_id}",
+            "GET /tasks/{taskId}",
+            "patch /tasks/{taskId}",
+            "DELETE /tasks/{taskId}",
             "GET /tasks/status/{status}",
             "GET /tasks/priority/{priority}",
         ]

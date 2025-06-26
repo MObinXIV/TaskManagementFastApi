@@ -1,6 +1,6 @@
 from pydantic import BaseModel, field_validator
 from typing import Optional
-from datetime import datetime
+from datetime import datetime,timezone
 from models import TaskStatus, TaskPriority
 
 class TaskCreate(BaseModel):
@@ -19,7 +19,7 @@ class TaskCreate(BaseModel):
     @field_validator("due_date")
     @classmethod
     def checkValidDeadLine(cls,value):
-        if value and value< datetime.now():
+        if value and value< datetime.now(timezone.utc):
             raise ValueError("Deadline must be future value")
         return value
 
